@@ -12,15 +12,15 @@ titleEl.textContent = "Заголовок страницы";
 document.body.appendChild(titleEl);
 
 // добавляем изображение в наш список элементов. опять же В КОНЕЦ!!!
-const imgEl = document.createElement("img");
-imgEl.src = "https://www.goodfon.ru/wallpaper/devushka-leto-plyazh-2559.html";
-imgEl.width = 480;
-imgEl.alt = "beach";
-listEl.appendChild(imgEl);
+// const imgEl = document.createElement("img");
+// imgEl.src = "https://www.goodfon.ru/wallpaper/devushka-leto-plyazh-2559.html";
+// imgEl.width = 480;
+// imgEl.alt = "beach";
+// listEl.appendChild(imgEl);
 
 // ===================добавляем пункты меню===============
 const navItemEl = document.createElement("li");
-navItemEl.classList.add(".nav-item");
+navItemEl.classList.add("nav-item");
 
 const navLinkEl = document.createElement("a");
 navLinkEl.classList.add("nav-link");
@@ -35,13 +35,22 @@ listEl.appendChild(navItemEl);
 console.log(listEl);
 
 // ======================= test =======================
-const inputEl = document.createElement("field");
-inputEl.classList.add("input");
-inputEl.textContent = "форма для заполнения";
+// const inputEl = document.createElement("field");
+// inputEl.classList.add("input");
+// inputEl.textContent = "форма для заполнения";
 
-const locListEl = document.createElement("ul");
-locListEl.classList.add("my-list");
-locListEl.textContent = "локальный список";
+// const locListEl = document.createElement("ul");
+// locListEl.classList.add("my-list");
+// locListEl.textContent = "локальный список";
 
-inputEl.appendChild(locListEl);
-listEl.appendChild(inputEl);
+// inputEl.appendChild(locListEl);
+// listEl.appendChild(inputEl);
+
+const firstCarEl = document.querySelector(".cars-item-1");
+firstCarEl.textContent = "bmw";
+
+console.log(firstCarEl);
+
+const secondCarEl = document.querySelector(".cars-item-2");
+secondCarEl.textContent = "mersedes";
+console.log(secondCarEl);
