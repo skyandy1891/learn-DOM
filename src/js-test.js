@@ -1,24 +1,30 @@
 const listEl = document.querySelector(".cars");
+
 // console.log(listEl);
 // создаём элемент (заголовок)
-const titleEl = document.createElement("h1");
+// const titleEl = document.createElement("h1");
+
 // даём класс элементу
-titleEl.classList.add("page-title");
+// titleEl.classList.add("page-title");
+
 // даём заголовок элементу
-titleEl.textContent = "Заголовок страницы";
+// titleEl.textContent = "Заголовок страницы";
+
 // console.log(titleEl);
 // добавляем элемент на страницу
 // appendChild добавляет элемент в конец body
-document.body.appendChild(titleEl);
 
-// добавляем изображение в наш список элементов. опять же В КОНЕЦ!!!
+// document.body.appendChild(titleEl);
+
+// ============================добавляем изображение в наш список элементов. опять же В КОНЕЦ!!!
 // const imgEl = document.createElement("img");
 // imgEl.src = "https://www.goodfon.ru/wallpaper/devushka-leto-plyazh-2559.html";
 // imgEl.width = 480;
 // imgEl.alt = "beach";
 // listEl.appendChild(imgEl);
 
-// ===================добавляем пункты меню===============
+// ============================добавляем пункты меню===============
+
 const navItemEl = document.createElement("li");
 navItemEl.classList.add("nav-item");
 
@@ -30,27 +36,21 @@ navLinkEl.href = "/profile";
 // вкладываем ссылку в li
 navItemEl.appendChild(navLinkEl);
 
-// вкладываем li в список машин (listEl)
-listEl.appendChild(navItemEl);
-console.log(listEl);
+// ===firstElementChild (в начало списка)===
+// ===lastElementChild (в конец списка)===
+// ===children[index] (перед дюбым элементом, индекс которого мы укажем)===
 
-// ======================= test =======================
-// const inputEl = document.createElement("field");
-// inputEl.classList.add("input");
-// inputEl.textContent = "форма для заполнения";
+// добавляем li в начало списка
 
-// const locListEl = document.createElement("ul");
-// locListEl.classList.add("my-list");
-// locListEl.textContent = "локальный список";
+// с помощью insertBefore вкладываем li в список cars (listEl) ПЕРВЫМ В СПИСКЕ!!!
+listEl.insertBefore(navItemEl, listEl.firstElementChild);
 
-// inputEl.appendChild(locListEl);
-// listEl.appendChild(inputEl);
+// добавляем li в перед последним элементом списка
 
-const firstCarEl = document.querySelector(".cars-item-1");
-firstCarEl.textContent = "bmw";
+// insertBefore если нужно вставить перед последним... то lastElementChild
+listEl.insertBefore(navItemEl, listEl.lastElementChild);
 
-console.log(firstCarEl);
+// добавляем li в перед любым элементом списка
 
-const secondCarEl = document.querySelector(".cars-item-2");
-secondCarEl.textContent = "mersedes";
-console.log(secondCarEl);
+// с помощью children[index] можно поставить перед любым элементом
+listEl.insertBefore(navItemEl, listEl.children[1]);
