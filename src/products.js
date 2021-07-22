@@ -12,7 +12,7 @@ const product = {
   /* <article class="product">
   <h2 class="product-name">Название</h2>
   <p class="product-descr">Описание</p>
-  <p class="product-pridct">Цена:</p>
+  <p class="product-price">Цена:</p>
 </article>; */
 }
 
@@ -27,11 +27,16 @@ const descrEl = document.createElement("p");
 descrEl.textContent = product.description;
 descrEl.classList.add("product-descr");
 
-const pridctEl = document.createElement("p");
-pridctEl.textContent = product.price;
-pridctEl.classList.add("product-pridct");
+const priceEl = document.createElement("p");
+priceEl.textContent = `Цена: ${product.price} долларов`;
+priceEl.classList.add("product-price");
 
 console.log(productEl);
-console.log(productNameEl);
-console.log(descrEl);
-console.log(pridctEl);
+
+// ===добавляем элементы в разметку===
+
+const mainProductEl = document.querySelector(".js-products");
+
+productEl.append(productNameEl, descrEl, priceEl);
+
+mainProductEl.appendChild(productEl);
